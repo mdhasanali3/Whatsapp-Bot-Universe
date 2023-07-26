@@ -1,0 +1,25 @@
+# numpy==1.21.6
+scipy>= 1.0
+scikit-learn
+# ==0.22.1
+Cmake
+flask
+cython
+setuptools
+spacy
+flask_cors
+python-dotenv
+# wheel
+# setuptools-rust
+# snips-nlu-parsers==0.4.3
+# snips-nlu-parsers --only-binary :all:
+langchain
+# snips-nlu==0.20.0
+pymysql
+pymssql
+openai
+PyPDF2
+faiss-cpu
+tiktoken
+pypdf
+chromadb

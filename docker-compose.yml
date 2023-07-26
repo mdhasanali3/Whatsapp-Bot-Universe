@@ -1,0 +1,16 @@
+version: "3.2"
+services:
+
+  front-channel-whatsapp:
+    container_name: front-channel-whatsapp
+    image: front-channel-whatsapp
+    build: ./channels_service/whats_app/.
+    ports:
+      - 3000:3000
+
+  bot-service-back:
+    container_name: bot-service-back
+    image: bot-service-back
+    build: ./bot_service/.
+    ports:
+      - 5000:5000

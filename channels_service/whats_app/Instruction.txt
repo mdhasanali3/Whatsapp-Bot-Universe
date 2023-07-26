@@ -1,0 +1,47 @@
+How to run and configure:
+///
+change config.js, config.py, .env
+
+
+////
+1. Open the folder on vs code
+2. On Terminal - type "code ."
+3. Run "npm run dev"
+4. Remember the port number.
+5. Open new Terminal and type "ngrok http `port_number`"
+    for example: ngrok http 3000
+6. Copy the forwarding address. That should be something like that "https://02dc-103-72-212-242.ngrok-free.app"
+7. Go to the link given below:
+
+    https://console.twilio.com/us1/develop/sms/try-it-out/whatsapp-learn?frameUrl=%2Fconsole%2Fsms%2Fwhatsapp%2Flearn%3Fx-target-region%3Dus1
+
+    Go to Sandbox Settings => When a message comes in
+    Paste the forwarding link there and add "/api/message" at the end of it.
+    For example:
+    https://02dc-103-72-212-242.ngrok-free.app/api/message
+    Save it.
+In below; you will find "Sandbox Participants" block in above link where there is a number and a code given
+(mostly the number will be +14155238886 and the code will be "join xyz-abc" something like that).
+
+8. Open a new terminal. Change the path to 'langchain_sevice' folder.
+9. Install the requirements using 'pip install -r .\requirements.txt' command.
+10. run the python api by 'python api.py' command.
+
+11. Go to WhatsApp ; Save the number and send the code in chat. 
+12. That's it! Start asking questions.
+    *** Ask only specific "Question".Nothing else (like Hi, wow, hlw etc).
+
+---------------------- Blocker ---------------------------
+
+1. If face any problem in chat ; just go to .env.local file.
+    TWILLO_ACCOUNT_SID= "something"
+    TWILLO_ACCOUNT_TOKEN= "something"
+    => The value of something will be found at :- https://console.twilio.com/
+
+    OPENAI_API_KEY= "something"
+    For this one; go to :- https://platform.openai.com/account/api-keys
+    Click "+Create new secret key" then copy the key. Paste it on "something" area.
+
+2. Save the file and start over again. 
+
+Youtube: https://youtu.be/CtzuhxyrAgM 

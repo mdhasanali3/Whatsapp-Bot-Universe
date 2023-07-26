@@ -1,0 +1,31 @@
+{
+  "name": "chatbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/documentai": "^7.3.1",
+    "axios": "^1.4.0",
+    "dotenv": "^16.1.4",
+    "googletrans": "^1.0.4",
+    "next": "^13.4.2",
+    "openai": "^3.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "redis": "^4.6.6",
+    "twilio": "^4.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.16.1",
+    "typescript": "5.0.4"
+  }
+}

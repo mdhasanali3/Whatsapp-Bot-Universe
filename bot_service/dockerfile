@@ -1,0 +1,24 @@
+FROM python:3.9-slim-buster
+
+WORKDIR /app
+# Set the working directory in the container to /app
+
+# Add the current directory contents into the container at /app
+ADD . /app
+
+RUN apt-get -y update
+RUN apt-get -y upgrade
+RUN apt install build-essential -y
+
+RUN pip cache purge
+
+RUN pip install --upgrade pip
+# If you have any Python dependencies, install them
+RUN pip install --no-cache-dir -r requirements.txt
+# Bundle app source
+COPY . .
+# Make port 8501 available to the world outside this container
+EXPOSE 5000
+
+# Navigate to src directory and Run main.py when the container launches
+CMD ["python", "api.py"]
