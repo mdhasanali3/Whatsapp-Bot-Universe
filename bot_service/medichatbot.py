@@ -15,6 +15,7 @@ def mcb(prompt):
     os.environ["OPENAI_API_KEY"] = config.open_ai_key
         # read data from the file and put them into a variable called raw_text
     raw_text = ''
+    print("i am in ",prompt)
     for i, page in enumerate(reader.pages):
         text = page.extract_text()
         if text:
@@ -39,9 +40,10 @@ def mcb(prompt):
 
     # query = "tell me about PERIOFLOW APPLICATIONS"
     query=prompt
+    query1=prompt+" answer should contain only 20 word"
     docs = docsearch.similarity_search(query)
-    ans=chain.run(input_documents=docs, question=query)
-    print(ans)
+    ans=chain.run(input_documents=docs, question=query1)
+    print(ans," answer from open ai")
     return ans
 
 

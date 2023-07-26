@@ -11,7 +11,7 @@ CORS(app)
 @app.route("/medichatbot",methods=['POST'])
 def medibot():
     prompt=request.json.get("prompt","")
-    print(prompt)
+    print(prompt," from flask ")
     medibot= mcb(prompt)
     return jsonify({"medibot": medibot})
 

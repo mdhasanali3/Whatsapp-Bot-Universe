@@ -24,15 +24,16 @@ export default async function handler(req, res) {
     console.log(to,"  ####### number")
     to = to.replace("whatsapp:+","")
     
-    console.log(req.body.Body,"i am req ##########")
-
+    console.log(to,"replaced to ",req.body.Body,"i am request #####")
+    try {
     let replyToBeSent = "";
     const response = await axios.post(`${config.bot_api}`, {
         prompt: req.body.Body
     })
-    replyToBeSent = response.data.medibot//.output
+    let replyToBeSen = response.data.medibot//.output
     // console.log(slot_name, slot_value)
-    console.log(replyToBeSent, "########## replyToBeSent #### output ")//,response)
+    replyToBeSent= String(replyToBeSen)
+    console.log(replyToBeSent, "##### replyToBeSent  string",replyToBeSen)//,response)
 
 
     messageResponse.message(replyToBeSent);//(translatedReply);
@@ -41,4 +42,7 @@ export default async function handler(req, res) {
         'Content-Type': 'text/xml'
     });
     res.end(messageResponse.toString());
+} catch (error) {
+        console.error('Error:', error.message);
+      }
 }
